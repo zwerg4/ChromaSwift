@@ -60,13 +60,11 @@ let package = Package(
             ],
             cSettings: [
                 .define("HAVE_LRINTF"),
-                .unsafeFlags(["-Wno-conversion"], .when(platforms: [.iOS, .tvOS]))
             ],
             cxxSettings: [
                 .define("USE_VDSP"),
                 .define("HAVE_ROUND"),
                 .headerSearchPath("src"),
-                .unsafeFlags(["-Wno-macro-redefined"], .when(configuration: .debug))
             ],
             linkerSettings: [.linkedFramework("Accelerate")]
         ),
